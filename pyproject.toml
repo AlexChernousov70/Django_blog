@@ -1,0 +1,19 @@
+[project]
+name = "django-blog-hw-45"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Alex",email = "alex70.07@mail.ru"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "mistralai (>=1.8.2,<2.0.0)",
+    "markdown (>=3.8,<4.0)",
+    "django (>=5.2.3,<6.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
