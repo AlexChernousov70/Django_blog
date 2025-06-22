@@ -10,7 +10,12 @@
     <div>
         <a href="{% url 'users:register' %}" class="btn btn-success">Зарегистрироваться</a>
         <a href="{% url 'users:login' %}" class="btn btn-outline-dark ms-2">Войти</a>
-        <a href="{% url 'users:login' %}" class="btn btn-outline-dark ms-2">Выйти</a>
+
+        <form action="{% url 'users:logout' %}" method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Выйти</button>
+        </form>
+
     </div>
 </body>
 </html>
