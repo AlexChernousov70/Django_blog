@@ -4,6 +4,7 @@ from django.contrib.auth import login as auth_login, logout as auth_logout, auth
 from django.contrib.auth.decorators import login_required
 from django.contrib import messages
 from .forms import UserRegisterForm, UserLoginForm # UserLoginForm наследуется от AuthenticationForm
+from django.views.generic import TemplateView
 
 def register_view(request):
     if request.user.is_authenticated:
@@ -50,3 +51,7 @@ def logout_view(request):
     auth_logout(request)
     messages.info(request, 'Вы успешно вышли из системы.')
     return redirect('landing')
+
+class LandingPageView(TemplateView):
+    """Представление для главной (посадочной) страницы сайта."""
+    template_name = "users\landing.html"
